@@ -34,11 +34,11 @@ tibble::tibble(
 # very little missing affiliation data overall
 table(is.na(d$affiliation)) / nrow(d)
 
-# top affiliations
+# top affiliations, [NOTE] before (much needed!) data cleaning
 group_by(d, affiliation) %>% 
   count(sort = TRUE)
 
-# [NOTE] one author ('') needs to be discarded
+# [NOTE] one author ('Deleted UserAccount') needs to be discarded
 group_by(d, author) %>% 
   count(sort = TRUE)
 
